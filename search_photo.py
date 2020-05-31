@@ -1,9 +1,9 @@
 from run_search_face import photo_search
 from run_search_face_vk import photo_search_vk
 from digit_photo_search import digit_photo_search
-from digit_photo_base import digit_photo_base
+from digit_photo_base import start_digit_photo_ais
 from name_photo_base import name_photo_to_search
-from digit_photo_base_vk import digit_photo_base_vk
+from digit_photo_base_vk import start_digit_photo_vk
 import os
 import sys
 
@@ -13,9 +13,9 @@ def first_menu():
     print("-----------------------------------------------------------------------------------")
     print("Поместите фотографию в папку \"search_object\"")
     print("1. Запуск стандартного поиска")
-    print("""2. Запуск улучшенного поиска 
+    print("""2. Запуск поиска с погрешностью 
 (Использовать для фотографий плохого качества или в случае отсутствия результатов стандартного поиска.
- Возможо получения побочных результатов)""")
+ Возможо получения большого колличества побочных результатов)""")
     print("3. Выход")
     print("-----------------------------------------------------------------------------------")
 
@@ -65,7 +65,7 @@ try:
                     digit_photo_search(name_photo_to_search())
                     print("-----------------------------------------------------------------------------------")
                     print("Поиск: ")
-                    photo_search_vk(0.6)
+                    photo_search_vk(0.55)
                     print("-----------------------------------------------------------------------------------")
                     pause_exit()
                 elif var_second == '3':
@@ -108,9 +108,9 @@ try:
                     photo_search_vk(float(coefficient_vk))
                     pause_exit()
                 elif var_dop_menu == '3':
-                    digit_photo_base()
+                    start_digit_photo_ais()
                 elif var_dop_menu == '4':
-                    digit_photo_base_vk()
+                    start_digit_photo_vk()
                 elif var_dop_menu == '5':
                     sys.exit()
                 else:
